@@ -12,7 +12,7 @@ shootout_game_mvc/
 ├── view.py           -> GUI rendering and input handling (View)
 ├── constants.py      -> Enums, decision matrix, color and screen settings
 ├── README.txt        -> Project documentation
-
+├── simulate_vs.py    -> Simulates a strategic AI vs a random AI over 10,000 games to see the edge a decent player has in this game. This can be scaled to test other strategies as well
 GAMEPLAY OVERVIEW
 -----------------
 Each turn, both the player and the AI choose one of the following actions:

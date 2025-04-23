@@ -133,9 +133,18 @@ class Game:
         self.turn_number = 0
 
     def ai_decide(self):
+        # Always reload on first turn
         if self.turn_number == 0:
             return "reload"
 
+        player_bullets = self.player.bullets
+        ai_bullets = self.ai.bullets
+
+        # Guaranteed kill: player can't shoot, AI has cannon
+        if player_bullets == 0 and ai_bullets >= 2:
+            return "cannon"
+
+        # Default available options
         available = ["reload", "shield", "reflect"]
         if self.ai.weapons["gun"].can_use(self.ai):
             available.append("gun")
@@ -144,10 +153,9 @@ class Game:
         if self.ai.weapons["cannon"].can_use(self.ai):
             available.append("cannon")
 
-        if self.player.last_action in ["shield", "reflect"] and "cannon" in available:
-            return "cannon"
-
+        # Otherwise choose a valid random action
         return random.choice(available)
+
 
     def resolve_turn(self):
         p1_action = Action(self.player.last_action)
