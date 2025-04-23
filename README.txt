@@ -2,7 +2,7 @@
 WAR (2017 Edition)
 ===========================
 
-A strategic, turn-based 1v1 game built in Python with Pygame, structured using the MVC (Model-View-Controller) design pattern. Players choose from offensive and defensive actions to defeat the opponent. Features AI logic and an extensible weapon system.
+Based on a game I played in my childhood. This is a strategic, turn-based 1v1 game built in Python with Pygame, structured using the MVC (Model-View-Controller) design pattern. Players choose from offensive and defensive actions to defeat the opponent. Features AI logic and an extensible weapon system.
 
 PROJECT STRUCTURE
 -----------------
